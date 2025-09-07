@@ -1,6 +1,6 @@
 <h1 align="center">TextboxLink</h1>
 
-<h3 align="center">Add highlighted text to a TextBox.</h3>
+<h3 align="center">Add highlighted URL link to a TextBox.</h3>
 
 ```Python
 textbox_link = TextboxLink()
