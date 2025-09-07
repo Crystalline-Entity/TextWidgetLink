@@ -2,7 +2,8 @@
 
 <h3 align="center">Add highlighted URL link to a TextBox.</h3>
 
-```Python
+```python
+from TextboxLink import TextboxLink
 textbox_link = TextboxLink()
 
 textbox_link.add(text_widget=tb, the_text='Complex Numbers:', tag_name='Complex',
