@@ -4,7 +4,7 @@ class TextboxLink():
     """
     Author: Kevin Glentworth
     Date: August-2025
-    Extends textbox widget to allow for word highlighting and URLs.
+    Extends textbox widget to allow URLs.
     __init__ sets the initial values for each configurable item. borderwidth and relief apply to highlight_word only.
     config allows those values to be changed for any future calls, but not for existing links and words.
     add_link and highlight_word allow the options to be changed for that item only.
@@ -177,3 +177,4 @@ class TextboxLink():
         
     def get_config(self) -> dict:
         return vars(TextboxLink())
+
