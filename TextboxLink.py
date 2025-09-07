@@ -5,7 +5,7 @@ class TextboxLink():
     Author: Kevin Glentworth
     Date: August-2025
     Extends textbox widget to allow URLs.
-    __init__ sets the initial values for each configurable item. borderwidth and relief apply to highlight_word only.
+    __init__ sets the initial values for each configurable item.
     config allows those values to be changed for any future calls, but not for existing links and words.
     add_link and highlight_word allow the options to be changed for that item only.
     """
@@ -20,7 +20,6 @@ class TextboxLink():
                  popup_bg: str = 'lightyellow',
                  popup_border: str = 'red',
                  popup_font: list = ('Code New Roman', 13),
-                 borderwidth: str='',
                  show_url: bool = True):
         self._underline = underline
         self._underlinefg = underlinefg
@@ -32,7 +31,6 @@ class TextboxLink():
         self._popup_bg = popup_bg
         self._popup_border = popup_border
         self._popup_font = popup_font
-        self._borderwidth = borderwidth
         self._show_url = show_url
 
         
@@ -54,10 +52,7 @@ class TextboxLink():
         self.popup.geometry(f'+{mouse_x}+{mouse_y}')
         self.popup.attributes('-topmost', True) # Ensure the popup is above everything else.
 
-        # Label(self.popup, text=message, fg=p_fg, bg=p_bg, relief='flat', borderwidth=0, padx=2, pady=2, font=('Code New Roman',13)).pack()
         Label(self.popup, text=message, fg=p_fg, bg=p_bg, relief='flat', borderwidth=0, padx=2, pady=2, font=p_font).pack()
-        #self.popup.update_idletasks()
-        #self._text_widget.update_idletasks()
 
         
     def kill_url_popup(self):
@@ -168,8 +163,6 @@ class TextboxLink():
             self._popup_border = kwargs.pop('popup_border')
         if 'popup_font' in kwargs:
             self._popup_font = kwargs.pop('popup_font')
-        if 'borderwidth' in kwargs:
-            self._borderwidth = kwargs.pop('borderwidth')
         if 'show_url' in kwargs:
             self._show_url = kwargs.pop('show_url')
         if kwargs:
@@ -177,4 +170,3 @@ class TextboxLink():
         
     def get_config(self) -> dict:
         return vars(TextboxLink())
-
