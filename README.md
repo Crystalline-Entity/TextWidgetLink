@@ -21,16 +21,22 @@ textbox_link.add(text_widget=tb, the_text='[EMail]', new_text='EMail',
                 tag_name='email', the_link='mailto:username@domain')
 ```
 ![Screenshot](https://github.com/Crystalline-Entity/TextboxLink/blob/main/textboxlink_messagebox.png)
+<br>
+<h2 align='center'> OPTIONS </h2>
+<div align='center'>
 
-| **Parameter** | **Description** | **Default** |
-| underline | Underline text | True |
-| underlinefg | Underline colour | 'blue' |
-| hover_ul | Text colour when mouse hovers over text | 'green' |
-| hover_bg | Backgruond colour when mouse hovers over text | 'orange' |
-| fg_color | Highlighted text foreground colour | 'blue' |
-| bg_color | Highlighted text background colour | 'yellow' |
-| show_url | Show URL in popup when mouse hovers over highlighted text | True |
-| popup_fg | Foreground colour of URL popup | 'blue' |
-| popup_bg | background colour of URL popup | 'lightyellow' |
-| popup_border | border collur of URL popup |  'red' |
-| popup_font | URL popup font | ('Code New Roman', 13) |
+<h3 align='center'>Parameters for the initial call to textbox_link<h3>
+
+  | **Parameter** | **Description** | **Default** |
+  | --- | --- | --- |
+  | underline | Underline text | True |
+  | underlinefg | Underline colour | 'blue' |
+  | hover_ul | Text colour when mouse hovers over text | 'green' |
+  | hover_bg | Backgruond colour when mouse hovers over text | 'orange' |
+  | fg_color | Highlighted text foreground colour | 'blue' |
+  | bg_color | Highlighted text background colour | 'yellow' |
+  | show_url | Show URL in popup when mouse hovers over highlighted text | True |
+  | popup_fg | Foreground colour of URL popup | 'blue' |
+  | popup_bg | background colour of URL popup | 'lightyellow' |
+  | popup_border | border collur of URL popup |  'red' |
+  | popup_font | URL popup font | ('Code New Roman', 13) |
