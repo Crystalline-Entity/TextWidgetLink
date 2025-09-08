@@ -38,7 +38,7 @@ Parameters for the initial call to textbox_link. These are the defaults for all 
   | show_url | Show URL in popup when mouse hovers over highlighted text | True |
   | popup_fg | Foreground colour of URL popup | 'blue' |
   | popup_bg | background colour of URL popup | 'lightyellow' |
-  | popup_border | border collur of URL popup |  'red' |
+  | popup_border | border colour of URL popup |  'red' |
   | popup_font | URL popup font | ('Code New Roman', 13) |
 
 Parameters for calls to .add to create highlighted text.
