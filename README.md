@@ -23,9 +23,9 @@ textbox_link.add(text_widget=tb, the_text='[EMail]', new_text='EMail',
 ![Screenshot](https://github.com/Crystalline-Entity/TextboxLink/blob/main/textboxlink_messagebox.png)
 <br>
 <h2 align='center'> OPTIONS </h2>
-<div align='center'>
+<div align='left'>
 
-<h3 align='center'>Parameters for the initial call to textbox_link<h3>
+Parameters for the initial call to textbox_link. These are the defaults for all future calls.
 
   | **Parameter** | **Description** | **Default** |
   | --- | --- | --- |
@@ -40,3 +40,28 @@ textbox_link.add(text_widget=tb, the_text='[EMail]', new_text='EMail',
   | popup_bg | background colour of URL popup | 'lightyellow' |
   | popup_border | border collur of URL popup |  'red' |
   | popup_font | URL popup font | ('Code New Roman', 13) |
+
+Parameters for calls to .add to create highlighted text.
+These options are used to over-ride the options from the initial call above. These options apply only to this
+call and are not saved.
+
+  | **Parameter** | **Description** |
+  | --- | --- |
+  | text_widget |  The name of the text widget to apply highlights to |
+  | the_text | The text in the wodget to highlight |
+  | tag_name | The name of the tag to use for this highlight|
+  | the_link | The URL to assign to the text |
+  | new_text | Replacement text for the_text. Used if the_text has id options |
+  | underline | Underline text |
+  | underlinefg | Underline colour |
+  | hover_ul | Text colour when mouse hovers over text |
+  | hover_bg | Background colour when mouse hovers over text |
+  | fg_color | Highlighted text foreground colour |
+  | bg_color | Highlighted text background colour |
+  | show_url | Show URL in popup when mouse hovers over highlighted text |
+  | popup_fg | Foreground colour of URL popup |
+  | popup_bg | background colour of URL popup |
+  | popup_border | border collur of URL popup |
+  | popup_font | URL popup font |
+
+To change the default values for future calls, use .config and set the values.
