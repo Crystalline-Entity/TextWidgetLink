@@ -61,7 +61,7 @@ call and are not saved.
   | show_url | Show URL in popup when mouse hovers over highlighted text |
   | popup_fg | Foreground colour of URL popup |
   | popup_bg | background colour of URL popup |
-  | popup_border | border collur of URL popup |
-  | popup_font | URL popup font |
+  | popup_border | border colour of URL popup |
+  | popup_font | URL popup font, specified as ('family', size) |
 
 To change the default values for future calls, use .config and set the values.
