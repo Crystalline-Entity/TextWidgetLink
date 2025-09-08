@@ -48,7 +48,7 @@ call and are not saved.
   | **Parameter** | **Description** |
   | --- | --- |
   | text_widget |  The name of the text widget to apply highlights to |
-  | the_text | The text in the wodget to highlight |
+  | the_text | The text in the widget to highlight |
   | tag_name | The name of the tag to use for this highlight|
   | the_link | The URL to assign to the text |
   | new_text | Replacement text for the_text. Used if the_text has id options |
