@@ -4,10 +4,11 @@ class TextboxLink():
     """
     Author: Kevin Glentworth
     Date: August-2025
-    Extends textbox widget to allow URLs.
-    __init__ sets the initial values for each configurable item.
-    config allows those values to be changed for any future calls, but not for existing links and words.
-    add_link and highlight_word allow the options to be changed for that item only.
+    Adds clickable URLs to a textbox..
+    __init__ sets the initial values for each configurable item, colours etc.
+    .config allows those values to be changed for any future calls, but not for existing links and words.
+    .add allows the options to be changed for that item only.
+    The textbox is passed in the .add function, rather than the __init__ function.
     """
     def __init__(self,
                  underline: bool=True,
@@ -41,7 +42,7 @@ class TextboxLink():
         If the mouse pointer ends up over the popup object, it is treated as an <Exit>, which closes the popup window.
         As the mouse is still within the text_widget, it then performs another <Enter> and goes into a loop until the mouse is
         moved off the popup. Adjust both x and y to keep the popup away from the mouse cursor.
-        The popup_border (p_bd) isn't a Label widget item, it is applied to the Toplevel widget with padding, to make it appear
+        The popup_border isn't a Label widget item, it is applied to the Toplevel widget with padding, to make it appear
         as a border colour.
         """
         mouse_x = self._text_widget.winfo_pointerx() + 10
@@ -104,38 +105,43 @@ class TextboxLink():
             str0 = text_widget.get('1.0', 'end') # reload text from widget rather than slicing str0
         end_pos = '1.0 linestart+' + str(find_location + text_length) + 'c'
         self._text_widget = text_widget
-        fc = self._fg_color if fg_color is None else fg_color
-        bc = self._bg_color if bg_color is None else bg_color
-        ul = self._underline if underline is None else underline
-        uf = self._underlinefg if underlinefg is None else underlinefg
-        hu = self._hover_ul if hover_ul is None else hover_ul
-        hb = self._hover_bg if hover_bg is None else hover_bg
-        pf = self._popup_fg if popup_fg is None else popup_fg
-        pb = self._popup_bg if popup_bg is None else popup_bg
-        pbd = self._popup_border if popup_border is None else popup_border
-        p_font = self._popup_font if popup_font is None else popup_font
-        su = self._show_url if show_url is None else show_url
+        # Temporary variables are named as the actual variable with an _ appended.
+        fg_color_ = self._fg_color if fg_color is None else fg_color
+        bg_color_ = self._bg_color if bg_color is None else bg_color
+        underline_ = self._underline if underline is None else underline
+        underlinefg_ = self._underlinefg if underlinefg is None else underlinefg
+        hover_ul_ = self._hover_ul if hover_ul is None else hover_ul
+        hover_bg_ = self._hover_bg if hover_bg is None else hover_bg
+        popup_fg_ = self._popup_fg if popup_fg is None else popup_fg
+        popup_bg_ = self._popup_bg if popup_bg is None else popup_bg
+        popup_border_ = self._popup_border if popup_border is None else popup_border
+        popup_font_ = self._popup_font if popup_font is None else popup_font
+        show_url_ = self._show_url if show_url is None else show_url
         text_widget.tag_add(tag_name, begin_pos, end_pos)
-        text_widget.tag_config(tag_name, foreground=fc, background=bc)
-        if ul:
-            text_widget.tag_config(tag_name, underline=True, underlinefg=uf)
+        text_widget.tag_config(tag_name, foreground=fg_color_, background=bg_color_)
+        if underline_:
+            text_widget.tag_config(tag_name, underline=True, underlinefg=underlinefg_)
         text_widget.tag_bind(tag_name, '<Button-1>', lambda x: open_link(the_link))
         """
         Need to define the cursor, the colours and the action for <Enter> and <Leave>. We pass an embedded
         list or tuple of commands to the lambda for this, we cannot use a list variable or a tuple variable.
         """
-        if su:
-            text_widget.tag_bind(tag_name, '<Enter>', lambda x: (text_widget.configure(cursor='hand2'),
-                                                                text_widget.tag_config(tag_name, underlinefg=hu, background=hb),
-                                                                self.show_url_popup(self._text_widget, the_link, pf, pb, pbd, p_font)))
-            text_widget.tag_bind(tag_name, '<Leave>', lambda x: (text_widget.configure(cursor='xterm'),
-                                                                 text_widget.tag_config(tag_name, underlinefg=uf, background=bc),
-                                                                 self.kill_url_popup()))
+        if show_url_:
+            text_widget.tag_bind(tag_name, '<Enter>',
+                                 lambda x: [text_widget.configure(cursor='hand2'),
+                                            text_widget.tag_config(tag_name, underlinefg=hover_ul_, background=hover_bg_),
+                                            self.show_url_popup(self._text_widget, the_link, popup_fg_, popup_bg_, popup_border_, popup_font_)])
+            text_widget.tag_bind(tag_name, '<Leave>',
+                                 lambda x: [text_widget.configure(cursor='xterm'),
+                                            text_widget.tag_config(tag_name, underlinefg=underlinefg_, background=bg_color_),
+                                            self.kill_url_popup()])
         else:
-            text_widget.tag_bind(tag_name, '<Enter>', lambda x: (text_widget.configure(cursor='hand2'),
-                                                                text_widget.tag_config(tag_name, underlinefg=hu, background=hb)))
-            text_widget.tag_bind(tag_name, '<Leave>', lambda x: (text_widget.configure(cursor='xterm'),
-                                                                 text_widget.tag_config(tag_name, underlinefg=uf, background=bc)))
+            text_widget.tag_bind(tag_name, '<Enter>',
+                                 lambda x: [text_widget.configure(cursor='hand2'),
+                                            text_widget.tag_config(tag_name, underlinefg=hover_ul_, background=hover_bg_)])
+            text_widget.tag_bind(tag_name, '<Leave>',
+                                 lambda x: [text_widget.configure(cursor='xterm'),
+                                            text_widget.tag_config(tag_name, underlinefg=underlinefg_, background=bg_color_)])
 
 
     def configure(self, **kwargs):
