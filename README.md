@@ -25,7 +25,7 @@ text_widget_link.add(text_widget=tb, the_text='[Email]', new_text='Email',
 <h2 align='center'> OPTIONS </h2>
 <div align='left'>
 
-Parameters for the initial call to textbox_link. These are the defaults for all future calls.
+Parameters for the initial call to textwidget_link. These are the defaults for all future calls.
 
   | **Parameter** | **Description** | **Default** |
   | --- | --- | --- |
@@ -43,15 +43,15 @@ Parameters for the initial call to textbox_link. These are the defaults for all 
 
 Parameters for calls to .add to create highlighted text.
 These options are used to over-ride the options from the initial call above. These options apply only to this
-call and are not saved.
+highlight and are not saved.
 
   | **Parameter** | **Description** |
   | --- | --- |
   | text_widget |  The name of the text widget to apply highlights to |
-  | the_text | The text in the widget to highlight |
   | tag_name | The name of the tag to use for this highlight|
+  | the_text | The text in the widget to highlight |
   | the_link | The URL to assign to the text |
-  | new_text | Replacement text for the_text. Used if the_text has id options |
+  | new_text | Replacement text for the_text. e.g. Text in the messagebox could have quotes for the search, but aren't needed for the link. |
   | underline | Underline text |
   | underlinefg | Underline colour |
   | hover_ul | Text colour when mouse hovers over text |
