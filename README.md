@@ -1,26 +1,26 @@
-<h1 align="center">TextboxLink</h1>
+<h1 align="center">TextWidgetLink</h1>
 
-<h3 align="center">Add highlighted URL link to a TextBox.</h3>
+<h3 align="center">Add highlighted URL link to a Text Widget.</h3>
 
 ```python
-from TextboxLink import TextboxLink
-textbox_link = TextboxLink()
+from TextWidgetLink import TextWidgetLink
+text_widget_link = TextWidgetLink()
 
-textbox_link.add(text_widget=tb, the_text='Complex Numbers:', tag_name='Complex',
-                new_text='Complex Numbers',
-                popup_fg='red', popup_bg='lightgreen', popup_border='purple',
-                the_link='https://en.wikipedia.org/wiki/Complex_number')
-textbox_link.add(text_widget=tb, the_text='Base Numbers:', tag_name='Base',
-                the_link='https://en.wikipedia.org/wiki/Radix')
-textbox_link.add(text_widget=tb, the_text='Roman Numbers:', tag_name='Roman',
-                the_link='https://en.wikipedia.org/wiki/Roman_numerals')
-textbox_link.add(text_widget=tb, the_text='3.1415927', tag_name='pi',
-                the_link='https://en.wikipedia.org/wiki/Pi')
-textbox_link.add(text_widget=tb, the_text='[EMail]', new_text='EMail',
-                popup_font=('Courier New', 18), show_url=False,
-                tag_name='email', the_link='mailto:username@domain')
+text_widget_link.add(text_widget=tb, the_text='Complex Numbers:', tag_name='Complex',
+                     new_text='Complex Numbers',
+                     popup_fg='red', popup_bg='lightgreen', popup_border='purple',
+                     the_link='https://en.wikipedia.org/wiki/Complex_number')
+text_widget_link.add(text_widget=tb, the_text='Base Numbers:', tag_name='Base', bg_color='gold',
+                     the_link='https://en.wikipedia.org/wiki/Radix')
+text_widget_link.add(text_widget=tb, the_text='Roman Numbers:', tag_name='Roman',
+                     the_link='https://en.wikipedia.org/wiki/Roman_numerals')
+text_widget_link.add(text_widget=tb, the_text='3.1415927', tag_name='pi',
+                     the_link='https://en.wikipedia.org/wiki/Pi')
+text_widget_link.add(text_widget=tb, the_text='[Email]', new_text='Email',
+                     popup_font=('Courier New', 18), show_url=False,
+                     tag_name='email', the_link='mailto:kevin.glentworth@gmail.com')
 ```
-![Screenshot](https://github.com/Crystalline-Entity/TextboxLink/blob/main/textboxlink_messagebox.png)
+![Screenshot](https://github.com/Crystalline-Entity/TextboxLink/blob/main/textwidgetlink_messagebox.png)
 <br>
 <h2 align='center'> OPTIONS </h2>
 <div align='left'>
