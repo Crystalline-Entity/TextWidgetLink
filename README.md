@@ -18,7 +18,7 @@ text_widget_link.add(text_widget=tb, the_text='3.1415927', tag_name='pi',
                      the_link='https://en.wikipedia.org/wiki/Pi')
 text_widget_link.add(text_widget=tb, the_text='[Email]', new_text='Email',
                      popup_font=('Courier New', 18), show_url=False,
-                     tag_name='email', the_link='mailto:kevin.glentworth@gmail.com')
+                     tag_name='email', the_link='mailto:email_name@email_server')
 ```
 ![Screenshot](https://github.com/Crystalline-Entity/TextboxLink/blob/main/textwidgetlink_messagebox.png)
 <br>
