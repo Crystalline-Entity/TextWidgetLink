@@ -1,14 +1,15 @@
 from webbrowser import open_new as open_link
 from tkinter import Tk, Toplevel, Label, font
-class TextboxLink():
+class TextWidgetLink():
     """
     Author: Kevin Glentworth
     Date: August-2025
-    Adds clickable URLs to a textbox..
+    Adds clickable URLs to a text widget.
     __init__ sets the initial values for each configurable item, colours etc.
-    .config allows those values to be changed for any future calls, but not for existing links and words.
-    .add allows the options to be changed for that item only.
-    The textbox is passed in the .add function, rather than the __init__ function.
+    .config allows those values to be changed for any future calls, but not for existing links.
+    .add allows the options to be changed for that call only.
+    The text_widget is passed in the .add function, rather than the __init__ function. A single instance can
+        then be used for all text_widgets.
     """
     def __init__(self,
                  underline: bool=True,
@@ -172,7 +173,7 @@ class TextboxLink():
         if 'show_url' in kwargs:
             self._show_url = kwargs.pop('show_url')
         if kwargs:
-            raise ValueError(f'{list(kwargs.keys())} not supported.')
+            raise ValueError(f'{list(kwargs.keys())} is/are not supported parameter(s).')
         
     def get_config(self) -> dict:
-        return vars(TextboxLink())
+        return vars(TextWidgetLink())
